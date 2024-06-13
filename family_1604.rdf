@@ -1,0 +1,388 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/m/ontologies/2024/2/familya/"
+     xml:base="http://www.semanticweb.org/m/ontologies/2024/2/familya/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:familya="http://www.semanticweb.org/m/ontologies/2024/2/familya#"
+     xmlns:untitled-ontology-23="http://www.semanticweb.org/m/ontologies/2024/2/untitled-ontology-23#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#hasAncestor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasAncestor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#hasChild -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasChild">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasParent"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#isChildOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#hasFather -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasFather">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasParent"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#isFatherOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#hasGrandfather -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasGrandfather">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasParent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasFather"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#hasMother -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasMother">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasParent"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#isMotherOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Woman"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#hasParent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasParent">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#isChildOf"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasAncestor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#hasSibling -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasSibling">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasParent"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasChild"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#isChildOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#isChildOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#isFatherOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#isFatherOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasChild"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#isMarriedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#isMarriedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#isMotherOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#isMotherOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasChild"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#birthYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#birthYear">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#deathYear -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#deathYear">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#modelError -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#modelError">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#Bachelor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#Bachelor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#isMarriedTo"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#Man -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#Man">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Woman"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasFather"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Man"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasMother"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Woman"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#isChildOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Woman"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#Sibling -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#Sibling">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasParent"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#hasChild"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#Spouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#Spouse">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#isMarriedTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#Woman -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#Woman">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#Bob -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#Bob">
+        <familya:birthYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1929</familya:birthYear>
+        <familya:deathYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1918</familya:deathYear>
+        <rdfs:label xml:lang="en">Bob</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#John -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#John">
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#mary"/>
+        <familya:hasMother rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#taylor"/>
+        <familya:isMarriedTo rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Laura"/>
+        <rdfs:label xml:lang="en">John</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#Laura -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#Laura">
+        <rdf:type rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <familya:birthYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2029</familya:birthYear>
+        <rdfs:label xml:lang="en">Laura</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#Mike -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#Mike">
+        <rdf:type rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <owl:differentFrom rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#jana"/>
+        <familya:hasFather rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Peter"/>
+        <rdfs:label xml:lang="en">Mike</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#Peter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#Peter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <familya:hasFather rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Bob"/>
+        <familya:birthYear rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1965</familya:birthYear>
+        <rdfs:label xml:lang="en">Peter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#jana -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#jana">
+        <rdf:type rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <familya:hasFather rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Peter"/>
+        <rdfs:label xml:lang="en">Jana</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#mary -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#mary">
+        <rdf:type rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <familya:hasMother rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#jana"/>
+        <familya:hasParent rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#taylor"/>
+        <rdfs:label xml:lang="en">Mary</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/m/ontologies/2024/2/familya#taylor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/m/ontologies/2024/2/familya#taylor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#Person"/>
+        <familya:hasChild rdf:resource="http://www.semanticweb.org/m/ontologies/2024/2/familya#mary"/>
+        <rdfs:label xml:lang="en">taylor</rdfs:label>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
